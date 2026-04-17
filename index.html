@@ -1027,6 +1027,7 @@ function updateStorageInfo(){
 function doLogin(){
   const u=document.getElementById('lu').value.trim(),p=document.getElementById('lp').value;
   let f=users.find(x=>x.user===u&&x.pass===p);
+   if(!f) f=DEF_USERS.find(x=>x.user===u&&x.pass===p);
   if(!f) f=DEF_USERS.find(x=>x.user===u&&x.pass===p);
   if(!f){document.getElementById('lerr').style.display='block';return;}
   document.getElementById('lerr').style.display='none';CU=f;
